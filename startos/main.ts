@@ -1,5 +1,11 @@
 import * as fs from 'fs'
 import { FileHelper } from '@start9labs/start-sdk'
+import { manifest as bitcoinManifest } from 'bitcoin-core-startos/startos/manifest'
+import {
+  rpccookiefile,
+  rpcHostId,
+  rpcPort,
+} from 'bitcoin-core-startos/startos/utils'
 import { storeJson } from './fileModels/store'
 import { i18n } from './i18n'
 import { sdk } from './sdk'
@@ -22,7 +28,7 @@ export const main = sdk.setupMain(async ({ effects }) => {
       mountpoint: '/data',
       readonly: false,
     })
-    .mountDependency({
+    .mountDependency<typeof bitcoinManifest>({
       dependencyId: 'bitcoind',
       volumeId: 'main',
       subpath: null,
@@ -38,14 +44,16 @@ export const main = sdk.setupMain(async ({ effects }) => {
   const address = await sdk.host
     .getBridgeAddress(effects, {
       packageId: 'bitcoind',
-      hostId: 'rpc',
-      internalPort: 8332,
+      hostId: rpcHostId,
+      internalPort: rpcPort,
       ssl: false,
     })
     .const()
   if (!address) throw new Error(i18n('Local Bitcoin is not reachable.'))
   const rootfs = await sub.rootfs
-  const cookie = await FileHelper.string(`${rootfs}/mnt/bitcoin/.cookie`)
+  const cookie = await FileHelper.string(
+    `${rootfs}/mnt/bitcoin/${rpccookiefile}`,
+  )
     .read(
       (value) => value?.trim(),
       (previous, next) => next === null || previous === next,
@@ -80,11 +88,8 @@ export const main = sdk.setupMain(async ({ effects }) => {
         '--admin-http-password-file',
         passwordContainerPath,
       ],
-      env: {
-        // StartOS exec does not inherit the Nix image's environment.
-        SSL_CERT_FILE: '/etc/ssl/certs/ca-bundle.crt',
-        FS_MISTRUST_DISABLE_PERMISSIONS_CHECKS: 'true',
-      },
+      // Otherwise inherited from the container runtime as `warn`, hiding the daemon's info logs.
+      env: { RUST_LOG: 'info' },
     },
     ready: {
       display: i18n('Operator Dashboard'),

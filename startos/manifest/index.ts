@@ -6,7 +6,8 @@ export const manifest = setupManifest({
   id: 'manifold-fedimint-guardian',
   title: 'Manifold Fedimint Guardian',
   license: 'MIT',
-  packageRepo: 'https://github.com/fedibtc/manifold-fedimint-guardian-startos',
+  packageRepo:
+    'https://github.com/Start9-Community/manifold-fedimint-guardian-startos',
   upstreamRepo: 'https://github.com/fedibtc/manifold',
   marketingUrl: 'https://manifold.fedi.xyz/',
   donationUrl: null,

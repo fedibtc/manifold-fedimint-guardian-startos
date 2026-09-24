@@ -2,7 +2,7 @@
 
 ## Documentation
 
-- [Guardian setup guide](https://manifold.fedi.xyz/guardian-guide) — setup walkthrough and full video.
+- [Guardian setup guide](https://manifold.fedi.xyz/guardian-guide/*) — setup walkthrough and full video.
 
 ## Getting set up
 
@@ -13,6 +13,10 @@
 
 ## Your dashboard password
 
-Run **Set Dashboard Password** again if you need a new password. This replaces the previous password and briefly restarts a running guardian service.
+Run **Set Dashboard Password** again if you need a new password. This replaces the previous password, signs you out of the dashboard, and briefly restarts a running guardian service.
 
 For help, visit [Fedi Support](https://support.fedi.xyz/).
+
+## Limitations
+
+Restore a backup only onto a server that replaces this one. Running the restored guardian while the original is still running puts two copies of the same guardians into their federations.

@@ -14,7 +14,7 @@ const dict = {
   'The operator dashboard is not ready': 10,
   'Sign in with the password from Set Dashboard Password.': 11,
   'Seat Iroh Ports': 12,
-  'Direct guardian connections and public API (TCP+UDP, first 8 seats)': 13,
+  'Direct iroh connections to guardian seats (first 8 seats)': 13,
   'Local Bitcoin supplies the mainnet chain.': 14,
   Bitcoin: 15,
 } as const

@@ -19,7 +19,6 @@ export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
     query: {},
   })
   const receipt = await origin.export([ui])
-  // StartOS forwards TCP and UDP together, including the public guardian API.
   const range = await sdk.MultiHost.of(effects, 'seat-iroh').bindPortRange({
     internalStartPort: irohFirstPort,
     externalStartPort: 31000,
@@ -30,7 +29,7 @@ export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
       id: 'seat-iroh',
       name: i18n('Seat Iroh Ports'),
       description: i18n(
-        'Direct guardian connections and public API (TCP+UDP, first 8 seats)',
+        'Direct iroh connections to guardian seats (first 8 seats)',
       ),
     }),
   )
