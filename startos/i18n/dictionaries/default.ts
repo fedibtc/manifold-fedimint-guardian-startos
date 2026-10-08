@@ -3,7 +3,7 @@ export const DEFAULT_LANG = 'en_US'
 const dict = {
   'Set Dashboard Password': 0,
   'Generate a new password for the dashboard.': 1,
-  'Replaces the current dashboard password.': 2,
+  'Replaces the current dashboard password and signs out every dashboard session. A running service restarts.': 2,
   'Dashboard Password': 3,
   'Use this password to sign in to the dashboard.': 4,
   'Set the dashboard password before starting.': 5,

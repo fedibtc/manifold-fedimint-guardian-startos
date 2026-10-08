@@ -9,7 +9,9 @@ export const setPassword = sdk.Action.withoutInput(
     name: i18n('Set Dashboard Password'),
     description: i18n('Generate a new password for the dashboard.'),
     warning: (await storeJson.read((s) => s?.operatorPassword).const(effects))
-      ? i18n('Replaces the current dashboard password.')
+      ? i18n(
+          'Replaces the current dashboard password and signs out every dashboard session. A running service restarts.',
+        )
       : null,
     allowedStatuses: 'any',
     group: null,
