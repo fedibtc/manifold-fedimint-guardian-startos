@@ -15,6 +15,6 @@ The upstream is the `ghcr.io/fedibtc/manifold-fman` image, pinned in the `Docker
 
 ## Applying the bump
 
-1. In the `Dockerfile`, replace the tag and the digest together.
+1. In the `Dockerfile`, replace the tag and the digest together. The scratch stage restates upstream's runtime configuration; compare it against both architectures' image configs. Use upstream's stable CA-bundle and entrypoint symlinks rather than hard-coding architecture-specific Nix store paths.
 2. In `startos/versions/current.ts`, bump the version and record the image commit and the bundled Fedimint release in every locale's release notes — upstream requires the exact commit there. Never publish a different image under a version already released.
 3. Build both architectures and test on StartOS: a fresh install, password rotation, an update over a populated data root, and backup/restore.

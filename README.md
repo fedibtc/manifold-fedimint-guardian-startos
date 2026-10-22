@@ -32,7 +32,7 @@ Manifold Fedimint Guardian is the Fleet Manager daemon from [fedibtc/manifold](h
 
 ## Image and Container Runtime
 
-The package runs upstream's `ghcr.io/fedibtc/manifold-fman` image, pinned by digest, for x86_64 and aarch64. The `Dockerfile` adds only `/etc/passwd`, `/etc/group`, and `/etc/nsswitch.conf`, which the minimal Nix image lacks.
+The package runs upstream's `ghcr.io/fedibtc/manifold-fman` image, pinned by digest, for x86_64 and aarch64. The `Dockerfile` flattens the upstream filesystem into a scratch image to avoid absolute Nix layer paths rejected by start-cli 2.4.0. It adds `/etc/passwd`, `/etc/group`, and `/etc/nsswitch.conf`, which the minimal Nix image lacks, and the `/proc`, `/sys`, and `/dev` mount points StartOS needs. The image configuration uses upstream's stable symlinks for the CA bundle (`/etc/ssl/certs/ca-bundle.crt`) and entrypoint (`/usr/local/bin/fleet-manager-entrypoint`); their Nix store targets differ by architecture.
 
 One subcontainer, `fman-sub`, runs `/bin/fleet-manager serve` directly rather than the image's entrypoint script, with the same arguments that script would build. Each seat's guardian is a `fedimintd` child process of that daemon inside the same subcontainer. `RUST_LOG` is set to `info`; without it the daemon inherits StartOS's `warn` level and logs almost nothing.
 
