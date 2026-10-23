@@ -1,5 +1,5 @@
 # StartOS and the guardian's user lookup need these files in the minimal Nix image.
-FROM ghcr.io/fedibtc/manifold-fman:61d28d774e72f27d25e41489e33126ae3184e170@sha256:18b4552f41c759751c2e9cae8b5f62d4b3550555687bdd71b63debee2f01dee2 AS upstream
+FROM ghcr.io/fedibtc/manifold-fman:108c8318dab0536b2402206382f3e2c19f27189a@sha256:3dd2b27174f4680877f00abfb3cef356751afd2e3100b93fab69bc90414e0d6c AS upstream
 
 # Re-create the image from one filesystem copy. The upstream Nix layers store
 # absolute paths (`/nix/...`), and start-cli 2.4.0 refuses those when it packs
