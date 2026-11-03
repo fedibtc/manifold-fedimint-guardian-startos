@@ -1,88 +1,58 @@
 import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 
 export const current = VersionInfo.of({
-  version: '0.1.7:0',
+  version: '0.1.9:0',
   releaseNotes: {
-    en_US: `This release delivers the latest Fedimint update (0.12.0-fedi15) and also lets federation admins change Fedi app settings for their federation.
+    en_US: `This release makes your guardians more reliable.
 
-These app settings include:
+- Guardians now reconnect by themselves after a lost connection.
+- Guardians use less CPU under heavy load.
+- The dashboard shows your uptime scores.
+- If this host runs a release that is too old, it stops offering new seats, and the Health page tells you to update.
 
-- default currency
-- wallet and invoice limits
-- spaces that new members join
-- default group chats
-- the pinned message
-- toggling certain features on/off (stability pool, multispend, invite codes, new members, offline wallet, and onchain deposits.)
+After you update to 0.1.9, you cannot go back to 0.1.8.
 
-A change takes effect when enough guardians in the federation run 0.1.7 or later.
+Image commit: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
+    es_ES: `Esta versión hace que tus guardians sean más fiables.
 
-No special upgrade steps are required for normal installations.
+- Los guardians ahora se reconectan solos después de perder una conexión.
+- Los guardians usan menos CPU con carga alta.
+- El panel muestra tus puntuaciones de disponibilidad.
+- Si este host usa una versión demasiado antigua, deja de ofrecer nuevos puestos, y la página de Salud te indica que actualices.
 
-Image commit: 108c8318dab0536b2402206382f3e2c19f27189a. Fedimint: 0.12.0-fedi15.`,
-    es_ES: `Esta versión incluye la última actualización de Fedimint (0.12.0-fedi15) y permite a los administradores de una federación cambiar los ajustes de la aplicación Fedi para su federación.
+Después de actualizar a 0.1.9, no se puede volver a 0.1.8.
 
-Estos ajustes incluyen:
+Commit de la imagen: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
+    de_DE: `Diese Version macht deine Guardians zuverlässiger.
 
-- moneda predeterminada
-- límites de la cartera y de las facturas
-- espacios a los que se unen los nuevos miembros
-- chats de grupo predeterminados
-- el mensaje fijado
-- activar o desactivar determinadas funciones (fondo de estabilidad, multispend, códigos de invitación, nuevos miembros, cartera sin conexión y depósitos en cadena)
+- Guardians verbinden sich nach einem Verbindungsverlust jetzt selbst neu.
+- Guardians brauchen unter hoher Last weniger CPU.
+- Das Dashboard zeigt deine Verfügbarkeitswerte.
+- Wenn dieser Host eine zu alte Version nutzt, bietet er keine neuen Plätze mehr an, und die Seite „Health“ fordert dich zum Update auf.
 
-Un cambio entra en vigor cuando suficientes guardians de la federación ejecutan la versión 0.1.7 o posterior.
+Nach dem Update auf 0.1.9 ist keine Rückkehr zu 0.1.8 möglich.
 
-Las instalaciones normales no requieren pasos especiales para actualizar.
+Image-Commit: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
+    pl_PL: `To wydanie sprawia, że Twoi guardianie są bardziej niezawodni.
 
-Commit de la imagen: 108c8318dab0536b2402206382f3e2c19f27189a. Fedimint: 0.12.0-fedi15.`,
-    de_DE: `Diese Version enthält das neueste Fedimint-Update (0.12.0-fedi15) und ermöglicht es Föderationsadministratoren, die Einstellungen der Fedi-App für ihre Föderation zu ändern.
+- Guardianie sami łączą się ponownie po utracie połączenia.
+- Guardianie zużywają mniej CPU przy dużym obciążeniu.
+- Panel pokazuje Twoje wyniki dostępności.
+- Jeśli ten host używa zbyt starej wersji, przestaje oferować nowe miejsca, a strona Health poprosi Cię o aktualizację.
 
-Diese Einstellungen umfassen:
+Po aktualizacji do 0.1.9 nie można wrócić do 0.1.8.
 
-- Standardwährung
-- Wallet- und Rechnungslimits
-- Räume, denen neue Mitglieder beitreten
-- Standard-Gruppenchats
-- die angeheftete Nachricht
-- das Ein- und Ausschalten bestimmter Funktionen (Stabilitätspool, Multispend, Einladungscodes, neue Mitglieder, Offline-Wallet und Onchain-Einzahlungen)
+Commit obrazu: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
+    fr_FR: `Cette version rend vos guardians plus fiables.
 
-Eine Änderung wird wirksam, sobald genügend Guardians der Föderation Version 0.1.7 oder neuer ausführen.
+- Les guardians se reconnectent désormais seuls après une perte de connexion.
+- Les guardians utilisent moins de CPU sous forte charge.
+- Le tableau de bord affiche vos scores de disponibilité.
+- Si cet hôte utilise une version trop ancienne, il cesse de proposer de nouvelles places, et la page Health vous demande de mettre à jour.
 
-Für normale Installationen sind keine besonderen Schritte beim Upgrade erforderlich.
+Après la mise à jour vers 0.1.9, il n’est plus possible de revenir à 0.1.8.
 
-Image-Commit: 108c8318dab0536b2402206382f3e2c19f27189a. Fedimint: 0.12.0-fedi15.`,
-    pl_PL: `To wydanie zawiera najnowszą aktualizację Fedimint (0.12.0-fedi15) i pozwala administratorom federacji zmieniać ustawienia aplikacji Fedi dla swojej federacji.
-
-Te ustawienia obejmują:
-
-- domyślną walutę
-- limity portfela i faktur
-- przestrzenie, do których dołączają nowi członkowie
-- domyślne czaty grupowe
-- przypiętą wiadomość
-- włączanie i wyłączanie wybranych funkcji (pula stabilności, multispend, kody zaproszeń, nowi członkowie, portfel offline i wpłaty onchain)
-
-Zmiana wchodzi w życie, gdy wystarczająca liczba guardianów federacji korzysta z wersji 0.1.7 lub nowszej.
-
-W przypadku standardowych instalacji aktualizacja nie wymaga dodatkowych czynności.
-
-Commit obrazu: 108c8318dab0536b2402206382f3e2c19f27189a. Fedimint: 0.12.0-fedi15.`,
-    fr_FR: `Cette version apporte la dernière mise à jour de Fedimint (0.12.0-fedi15) et permet aux administrateurs d’une fédération de modifier les paramètres de l’application Fedi pour leur fédération.
-
-Ces paramètres comprennent :
-
-- la devise par défaut
-- les limites du portefeuille et des factures
-- les espaces que rejoignent les nouveaux membres
-- les discussions de groupe par défaut
-- le message épinglé
-- l’activation ou la désactivation de certaines fonctionnalités (pool de stabilité, multispend, codes d’invitation, nouveaux membres, portefeuille hors ligne et dépôts onchain)
-
-Une modification prend effet lorsqu’un nombre suffisant de guardians de la fédération utilisent la version 0.1.7 ou ultérieure.
-
-Aucune étape particulière n’est nécessaire pour mettre à jour une installation standard.
-
-Commit de l’image : 108c8318dab0536b2402206382f3e2c19f27189a. Fedimint : 0.12.0-fedi15.`,
+Commit de l’image : 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint : 0.12.0-fedi18.`,
   },
   migrations: {
     up: async ({ effects }) => {},
