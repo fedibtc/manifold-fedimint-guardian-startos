@@ -1,58 +1,33 @@
 import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 
 export const current = VersionInfo.of({
-  version: '0.1.9:0',
+  version: '0.1.10:0',
   releaseNotes: {
-    en_US: `This release makes your guardians more reliable.
+    en_US: `This release updates Fedimint to 0.12.0-fedi22 and fixes small problems.
 
-- Guardians now reconnect by themselves after a lost connection.
-- Guardians use less CPU under heavy load.
-- The dashboard shows your uptime scores.
-- If this host runs a release that is too old, it stops offering new seats, and the Health page tells you to update.
+You do not need to do anything special to update.
 
-After you update to 0.1.9, you cannot go back to 0.1.8.
+Image commit: 53ca68e6787874d0dba20645380a405c0ae456e2. Fedimint: 0.12.0-fedi22.`,
+    es_ES: `Esta versión actualiza Fedimint a 0.12.0-fedi22 y corrige pequeños problemas.
 
-Image commit: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
-    es_ES: `Esta versión hace que tus guardians sean más fiables.
+No necesitas hacer nada especial para actualizar.
 
-- Los guardians ahora se reconectan solos después de perder una conexión.
-- Los guardians usan menos CPU con carga alta.
-- El panel muestra tus puntuaciones de disponibilidad.
-- Si este host usa una versión demasiado antigua, deja de ofrecer nuevos puestos, y la página de Salud te indica que actualices.
+Commit de la imagen: 53ca68e6787874d0dba20645380a405c0ae456e2. Fedimint: 0.12.0-fedi22.`,
+    de_DE: `Diese Version aktualisiert Fedimint auf 0.12.0-fedi22 und behebt kleine Probleme.
 
-Después de actualizar a 0.1.9, no se puede volver a 0.1.8.
+Für das Update musst du nichts Besonderes tun.
 
-Commit de la imagen: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
-    de_DE: `Diese Version macht deine Guardians zuverlässiger.
+Image-Commit: 53ca68e6787874d0dba20645380a405c0ae456e2. Fedimint: 0.12.0-fedi22.`,
+    pl_PL: `To wydanie aktualizuje Fedimint do 0.12.0-fedi22 i naprawia drobne problemy.
 
-- Guardians verbinden sich nach einem Verbindungsverlust jetzt selbst neu.
-- Guardians brauchen unter hoher Last weniger CPU.
-- Das Dashboard zeigt deine Verfügbarkeitswerte.
-- Wenn dieser Host eine zu alte Version nutzt, bietet er keine neuen Plätze mehr an, und die Seite „Health“ fordert dich zum Update auf.
+Aktualizacja nie wymaga żadnych dodatkowych czynności.
 
-Nach dem Update auf 0.1.9 ist keine Rückkehr zu 0.1.8 möglich.
+Commit obrazu: 53ca68e6787874d0dba20645380a405c0ae456e2. Fedimint: 0.12.0-fedi22.`,
+    fr_FR: `Cette version met à jour Fedimint vers 0.12.0-fedi22 et corrige de petits problèmes.
 
-Image-Commit: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
-    pl_PL: `To wydanie sprawia, że Twoi guardianie są bardziej niezawodni.
+Vous n’avez rien de particulier à faire pour mettre à jour.
 
-- Guardianie sami łączą się ponownie po utracie połączenia.
-- Guardianie zużywają mniej CPU przy dużym obciążeniu.
-- Panel pokazuje Twoje wyniki dostępności.
-- Jeśli ten host używa zbyt starej wersji, przestaje oferować nowe miejsca, a strona Health poprosi Cię o aktualizację.
-
-Po aktualizacji do 0.1.9 nie można wrócić do 0.1.8.
-
-Commit obrazu: 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint: 0.12.0-fedi18.`,
-    fr_FR: `Cette version rend vos guardians plus fiables.
-
-- Les guardians se reconnectent désormais seuls après une perte de connexion.
-- Les guardians utilisent moins de CPU sous forte charge.
-- Le tableau de bord affiche vos scores de disponibilité.
-- Si cet hôte utilise une version trop ancienne, il cesse de proposer de nouvelles places, et la page Health vous demande de mettre à jour.
-
-Après la mise à jour vers 0.1.9, il n’est plus possible de revenir à 0.1.8.
-
-Commit de l’image : 81ab02269135e0c5b2601c3b5eda11749d29215d. Fedimint : 0.12.0-fedi18.`,
+Commit de l’image : 53ca68e6787874d0dba20645380a405c0ae456e2. Fedimint : 0.12.0-fedi22.`,
   },
   migrations: {
     up: async ({ effects }) => {},
